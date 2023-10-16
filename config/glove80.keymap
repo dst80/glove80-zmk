@@ -125,7 +125,7 @@
                    &kp TAB        &kp Q        &kp W       &kp E       &kp R   &kp T                                                                         &kp Y       &kp U       &kp I       &kp O           &kp P   &kp LBKT
                    &kp ESC  &mt LSHFT A  &mt LCTRL S  &mt LALT D  &mt LGUI F   &kp G                                                                         &kp H  &mt RGUI J  &mt RALT K  &mt RCTL L  &mt RSHFT SEMI    &kp SQT
                    &kp ESC        &kp Z        &kp X       &kp C       &kp V   &kp B   &kp LSHFT  &kp LCTRL   &kp PG_UP  &kp PG_DN  &KP LGUI     &kp RCTRL   &kp N       &kp M   &kp COMMA     &kp DOT        &kp FSLH      &none
-                     &none      &kp F11      &kp F12    &kp LEFT   &kp RIGHT          &lt 2 BSPC  &lt 4 DEL  &lt 5 HOME  &lt 5 END  &lt 4 RET  &lt 2 SPACE              &kp UP    &kp DOWN       &RALT      &magic 7 0      &none
+                     &none      &kp F11      &kp F12    &kp LEFT   &kp RIGHT          &lt 2 BSPC  &lt 4 DEL  &lt 5 HOME  &lt 5 END  &lt 4 RET  &lt 2 SPACE              &kp UP    &kp DOWN    &kp RALT      &magic 7 0      &none
             >;
         };
         /*1*/
