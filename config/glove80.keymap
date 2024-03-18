@@ -12,16 +12,23 @@
 #include <dt-bindings/zmk/rgb.h>
 
 &mt {
-  flavor = "tap-preferred";
-  tapping-term-ms = <350>;
-  quick_tap_ms = <200>;
+    flavor = "tap-preferred";
+    require-prior-idle_ms= <125>;
+    tapping-term-ms = <200>;
+    quick_tap_ms = <200>;
 };
 
 &lt {  
-  flavor = "tap-preferred";
-  tapping-term-ms = <200>;
-  quick_tap_ms = <200>;
+    flavor = "tap-preferred";
+    require-prior-idle_ms= <125>;
+    tapping-term-ms = <200>;
+    quick_tap_ms = <200>;
 };
+
+#define DVO 1
+#define SYM 2
+#define FNDL 3
+#define KEYB 4
 
 / {
     behaviors {
@@ -84,98 +91,60 @@
     keymap {
         compatible = "zmk,keymap";
         /*0*/
-        base_with_home_layer {
+        qwerty {
             bindings = <
-                    &kp F1       &kp F2       &kp F3      &kp F4      &kp F5                                                                                            &kp F6      &kp F7      &kp F8          &kp F9    &kp F10
-                 &kp EQUAL       &kp N1       &kp N2      &kp N3      &kp N4  &kp N5                                                                        &kp N6      &kp N7      &kp N8      &kp N9          &kp N0  &kp MINUS
-                   &kp TAB        &kp Q        &kp W       &kp E       &kp R   &kp T                                                                         &kp Y       &kp U       &kp I       &kp O           &kp P   &kp LBKT
-                   &kp ESC  &mt LSHFT A  &mt LCTRL S  &mt LALT D  &mt LGUI F   &kp G                                                                         &kp H  &mt RGUI J  &mt RALT K  &mt RCTL L  &mt RSHFT SEMI    &kp SQT
-                   &kp ESC        &kp Z        &kp X       &kp C       &kp V   &kp B   &kp LCTRL   &kp LALT   &kp PG_UP  &kp PG_DN  &kp LGUI     &kp RCTRL   &kp N       &kp M   &kp COMMA     &kp DOT        &kp FSLH      &none
-                     &none      &kp F11      &kp F12    &kp LEFT   &kp RIGHT          &lt 2 BSPC  &lt 4 DEL  &lt 5 HOME  &lt 5 END  &lt 4 RET  &lt 2 SPACE              &kp UP    &kp DOWN    &kp RALT      &magic 7 0      &none
+                    &kp F1      &kp F2        &kp F3      &kp F4       &kp F5                                                                                                          &kp F6      &kp F7      &kp F8         &kp F9    &kp F10
+                 &kp EQUAL      &kp N1        &kp N2      &kp N3       &kp N4  &kp N5                                                                                      &kp N6      &kp N7      &kp N8      &kp N9         &kp N0  &kp MINUS
+                   &kp TAB       &kp Q         &kp W       &kp E        &kp R   &kp T                                                                                       &kp Y       &kp U       &kp I       &kp O          &kp P   &kp BSLH
+                   &kp ESC  &mt LGUI A    &mt LALT S &mt LCTRL D &mt LSHIFT F   &kp G                                                                                       &kp H &mt RSHFT J &mt RCTRL K  &mt RALT L  &mt RGUI SEMI    &kp SQT
+                 &kp LSHFT       &kp Z         &kp X       &kp C        &kp V   &kp B      &kp LCTRL    &tog DVO     &kp PG_UP  &kp    PG_DN &magic KEYB 0        &kp LGUI  &kp N       &kp M   &kp COMMA     &kp DOT       &kp FSLH  &kp RSHFT
+                  &mo FNDL     &kp F11       &kp F12    &kp LEFT    &kp RIGHT         &mt LSHFT BSPC &lt SYM DEL &mt LALT HOME  &mt RALT END   &lt SYM RET &mt RSHFT SPACE             &kp UP    &kp DOWN    &kp LBKT       &kp RBKT   &mo FNDL 
             >;
         };
         /*1*/
-        base_without_home_layer {
+        dvorak {
             bindings = <
-                &trans  &trans   &trans  &trans  &trans                                                                           &trans  &trans  &trans    &trans  &trans
-                &trans  &trans   &trans  &trans  &trans  &trans                                                           &trans  &trans  &trans  &trans    &trans  &trans
-                &trans  &trans   &trans  &trans  &trans  &trans                                                           &trans  &trans  &trans  &trans    &trans  &trans
-                &trans   &kp A    &kp S   &kp S  &kp F   &trans                                                           &trans   &kp J   &kp K   &kp L  &kp SEMI  &trans
-                &trans  &trans   &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans  &trans    &trans  &trans
-                &trans  &trans   &trans  &trans  &trans          &lt 3 BSPC  &trans  &trans  &trans  &trans  &lt 3 SPACE  &trans  &trans  &trans    &trans  &trans
-                           >;
+                    &kp F1      &kp F2        &kp F3      &kp F4       &kp F5                                                                                                            &kp F6      &kp F7      &kp F8     &kp F9    &kp F10
+                 &kp EQUAL      &kp N1        &kp N2      &kp N3       &kp N4  &kp N5                                                                                        &kp N6      &kp N7      &kp N8      &kp N9     &kp N0  &kp MINUS
+                   &kp TAB     &kp SQT     &kp COMMA     &kp DOT        &kp P   &kp Y                                                                                         &kp F       &kp G       &kp C       &kp R      &kp P   &kp BSLH
+                   &kp ESC  &mt LGUI A    &mt LALT O &mt LCTRL E &mt LSHIFT U   &kp I                                                                                         &kp D &mt RSHFT H &mt RCTRL T  &mt RALT N &mt RGUI S    &kp FSL
+                 &kp LSHFT    &kp SEMI         &kp Q       &kp J        &kp K   &kp X      &kp LCTRL      &trans       &kp PG_UP     &kp PG_DN &magic KEYB 0        &kp LGUI  &kp B       &kp M       &kp W       &kp V      &kp Z  &kp RSHFT
+                  &mo FNDL     &kp F11       &kp F12    &kp LEFT    &kp RIGHT         &mt LSHFT BSPC &lt SYM DEL &mt LALT 5 HOME  &mt RALT END   &lt SYM RET &mt RSHFT SPACE             &kp UP    &kp DOWN    &kp LBKT   &kp RBKT   &mo FNDL 
+            >;
         };
         /*2*/
-        shift_with_home_layer {
+        symbols {
             bindings = <
-                    &kp LS(F1)     &kp LS(F2)       &kp LS(F3)      &kp LS(F4)      &kp LS(F5)                                                                               &kp RS(F6)      &kp RS(F7)      &kp RS(F8)    &kp RS(F9)   &kp RS(F10)
-                 &kp LS(EQUAL)  &kp LS(GRAVE)       &kp LS(N3)           &none       &kp RA(Z)   &kp RA(X)                                                    &kp RS(Y)      &kp RS(N4)       &kp RA(E)       &kp RA(V)     &kp RA(B)     &kp RA(N)
-                   &kp LS(TAB)      &kp LS(Q)        &kp LS(W)       &kp LS(E)       &kp LS(R)   &kp LS(T)                                                    &kp RS(Y)       &kp RS(U)       &kp RS(I)       &kp RS(O)     &kp RS(P)  &kp RS(LBKT)
-                   &kp LS(ESC)      &kp LS(A)  &mt LCTRL LS(S)  &mt LALT LS(D)  &mt LGUI LS(F)   &kp LS(G)                                                    &kp RS(H)  &mt RGUI RS(J)  &mt RALT RS(K)  &mt RCTL RS(L)  &kp RS(SEMI)   &kp RS(SQT)
-                   &kp LS(ESC)      &kp LS(Z)        &kp LS(X)       &kp LS(C)       &kp LS(V)   &kp LS(B)  &trans  &trans  &trans  &trans  &trans  &trans    &kp RS(N)       &kp RS(M)   &kp RS(COMMA)     &kp RS(DOT)  &kp RS(FSLH)        &trans
-                        &trans    &kp LS(F11)      &kp LS(F12)    &kp LS(LEFT)   &kp LS(RIGHT)              &trans  &trans  &trans  &trans  &trans  &trans                   &kp RS(UP)    &kp RS(DOWN)          &trans        &trans        &trans
+                &none          &none         &none          &none        &none                                                                                &none          &none         &none          &none &none
+                &none &kp LS(RA(N1))    &kp RA(N2)     &kp RA(N3) &kp RA(LBKT) &kp RA(RBKT)                                                &kp RS(RA(C)) &kp RA(N5)  &kp RS(RA(V))    &kp RA(N9)     &kp RA(N0) &none
+                &none         &kp AT     &kp GRAVE       &kp LBKT     &kp RBKT    &kp CARET                                                     &kp EXCL     &kp LT         &kp GT     &kp EQUAL       &kp AMPS &none
+                &none  &mt LGUI BSLH &mt LALT FSLH &mt LCTRL LBRC     &kp RBRC    &kp UNDER                                                    &kp QMARK   &kp LPAR &mt RCTRL RPAR &mt RALT SEMI &mt RGUI COLON &none
+                &none       &kp HASH      &kp DLLR       &kp PIPE    &kp TILDE     &kp STAR &none   &none  &none  &none   &none &none           &kp PLUS  &kp PRCNT        &kp DQT      &kp APOS      &kp MINUS &none
+                &none          &none         &none          &none        &none              &none  &trans  &none  &none  &trans &none                         &none          &none         &none          &none &none
             >;
         };
         /*3*/
-        shift_without_home_layer {
+        fn {
             bindings = <
-                    &kp LS(F1)     &kp LS(F2)   &kp LS(F3)    &kp LS(F4)     &kp LS(F5)                                                                           &kp RS(F6)     &kp RS(F7)   &kp RS(F8)    &kp RS(F9)   &kp RS(F10)
-                 &kp LS(EQUAL)  &kp LS(GRAVE)   &kp LS(N3)         &none      &kp RA(Z)   &kp RA(X)                                                    &kp RS(Y)  &kp RS(N4)      &kp RA(E)    &kp RA(V)     &kp RA(B)     &kp RA(N)
-                   &kp LS(TAB)      &kp LS(Q)    &kp LS(W)     &kp LS(E)      &kp LS(R)   &kp LS(T)                                                    &kp RS(Y)   &kp RS(U)      &kp RS(I)    &kp RS(O)     &kp RS(P)  &kp RS(LBKT)
-                   &kp LS(ESC)      &kp LS(A)    &kp LS(S)     &kp LS(D)      &kp LS(F)   &kp LS(G)                                                    &kp RS(H)   &kp RS(J)      &kp RS(K)    &kp RS(L)  &kp RS(SEMI)   &kp RS(SQT)
-                   &kp LS(ESC)      &kp LS(Z)    &kp LS(X)     &kp LS(C)      &kp LS(V)   &kp LS(B)  &trans  &trans  &trans  &trans  &trans  &trans    &kp RS(N)   &kp RS(M)  &kp RS(COMMA)  &kp RS(DOT)  &kp RS(FSLH)        &trans
-                        &trans    &kp LS(F11)  &kp LS(F12)  &kp LS(LEFT)  &kp LS(RIGHT)              &trans  &trans  &trans  &trans  &trans  &trans               &kp RS(UP)   &kp RS(DOWN)       &trans        &trans        &trans
+                      &none        &none        &none        &none         &none                                                              &none        &none       &none       &none &none
+                      &none        &none        &none        &none         &none  &none                                          &none        &none        &none       &none       &none &none
+                      &none       &kp F1       &kp F2       &kp F3        &kp F4 &kp F5                                         &kp F6       &kp F7       &kp F8      &kp F9     &kp F10 &none
+                      &none  &mt LGUI N1  &mt LALT N2  &mt LCTR N3  &mt LSHFT N4 &kp N5                                         &kp N6 &mt RSHFT N7 &mt RCTRL N8 &mt RALT N9 &mt RGUI N0 &none
+                      &none      &kp F11      &kp F12        &none         &none  &none  &none  &none &none &none &none   &none  &none        &none     &none          &none       &none &none
+                      &none        &none        &none        &none         &none        &LSHFT &LCTRL &LALT &RALT &RCTRL &RSHFT                &none     &none          &none       &none &none
             >;
         };
-
         /*4*/
-        symbols_layer {
-            bindings = <
-                &trans            &trans         &trans                &trans           &trans                                                                                          &trans               &trans               &trans          &trans     &trans
-                &trans        &kp RA(N1)     &kp RA(N2)            &kp RA(N3)    &kp LS(RA(Y))   &kp LS(RA(X))                                                      &kp RA(C)    &kp RS(RA(Y))        &kp RS(RA(V))        &kp RS(RA(B))   &kp RS(RA(N))  &kp RA(S)
-                &trans       &kp RA(DOT)  &kp LS(SLASH)            &kp RA(N8)       &kp RA(N9)       &kp GRAVE                                                     &kp RS(N1)  &kp NON_US_BSLH  &kp RS(NON_US_BSLH)           &kp RS(N0)      &kp RS(N6)  &kp RA(W)
-                &trans     &kp RA(MINUS)     &kp LS(N7)            &kp RA(N7)       &kp RA(N0)    &kp LS(RBRC)                                                  &kp RS(MINUS)       &kp RS(N8)           &kp RS(N9)            &kp SLASH  &kp RS(PERIOD)  &kp RA(Q)
-                &trans  &kp NON_US_HASH      &kp LS(N4)   &kp RA(NON_US_BSLH)     &kp RA(RBKT)   &kp LS(EQUAL)  &trans  &trans  &trans  &trans  &trans  &trans      &kp RBKT        &kp RS(N5)           &kp RS(N2)  &kp RS(NON_US_HASH)   &kp RS(COMMA)     &trans
-                &trans           &trans          &trans                &trans          &trans                   &trans   &mo 6  &trans  &trans  &mo 6   &trans                          &trans               &trans               &trans          &trans     &trans
-            >;
-        };
-
-        /*5*/
-        controls_layer_ {
-            bindings = <
-                &kp C_BRI_DN  &kp C_BRI_UP     &kp C_PREV &kp C_NEXT   &kp C_PP                                                                                     &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP            &none  &kp PAUSE_BREAK
-                      &trans     &kp RA(D)  &kp LS(GRAVE)      &none      &none       &none                                                   &kp LEFT_PARENTHESIS  &kp KP_NUM  &kp KP_EQUAL  &kp KP_SLASH  &kp KP_MULTIPLY  &kp PRINTSCREEN
-                      &trans     &kp PG_UP       &kp BSPC     &kp UP    &kp DEL   &kp PG_DN                                                  &kp RIGHT_PARENTHESIS   &kp KP_N7     &kp KP_N8     &kp KP_N9     &kp KP_MINUS   &kp SCROLLLOCK
-                      &trans     &kp HOME        &kp LEFT   &kp DOWN  &kp RIGHT     &kp END                                                            &kp PERCENT   &kp KP_N4     &kp KP_N5     &kp KP_N6      &kp KP_PLUS            &none
-                      &trans      &kp ESC         &kp TAB    &kp INS  &kp ENTER  &kp K_UNDO  &trans  &trans  &trans  &trans  &trans  &trans              &kp COMMA   &kp KP_N1     &kp KP_N2     &kp KP_N3     &kp KP_ENTER           &trans
-                  &magic 2 0       &trans          &trans     &trans     &trans               &mo 6  &trans  &trans  &trans  &trans   &mo 6                          &kp KP_N0     &kp KP_N0    &kp KP_DOT     &kp KP_ENTER           &trans
-            >;
-        };
-        
-        /*6*/
-        greek_layer {
-            bindings = <
-                &trans  &trans  &trans  &trans  &trans                                                                             &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans                                                          &trans     &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans                                                          &trans     &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans                                                          &trans     &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp RA(M)  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans             &trans  &trans  &trans  &trans  &trans
-                           >;
-        };
-
-        /*7*/
         magic_layer {
             bindings = <
-                 &bt BT_CLR            &none            &none            &none            &none                                                                           &none  &none  &none  &none  &bt BT_CLR_ALL
-                      &none            &none            &none            &none            &none            &none                                                   &none  &none  &none  &none  &none           &none
-                     &trans  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                   &none  &none  &none  &none  &none           &none
-                &bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                   &none  &none  &none  &none  &none     &bootloader
-                 &sys_reset            &none            &none            &none            &none            &none  &bt_2  &bt_3         &none  &none  &none  &none  &none  &none  &none  &none  &none      &sys_reset
-                      &none            &none            &none            &none            &none                   &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none           &none
+                 &bt BT_CLR            &none            &none            &none            &none                                                                    &none  &none  &none  &none  &bt BT_CLR_ALL
+               &out OUT_USB            &bt_0            &bt_1            &bt_2            &bt_3            &none                                            &none  &none  &none  &none  &none    &out OUT_USB
+                     &trans  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                            &none  &none  &none  &none  &none           &none
+                &bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                            &none  &none  &none  &none  &none     &bootloader
+                 &sys_reset            &none            &none            &none            &none            &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none      &sys_reset
+                      &none            &none            &none            &none            &none                   &none  &none  &none  &none  &none  &none         &none  &none  &none  &none           &none
             >;
         };
-
         factory_test_layer {
             bindings = <
             &kp N0   &kp N6   &kp N2   &kp N8   &kp N4                                                                              &kp N4   &kp N8   &kp N2   &kp N6   &kp N0
