@@ -13,16 +13,16 @@
 
 &mt {
     flavor = "tap-preferred";
-    require-prior-idle_ms= <125>;
+    require-prior-idle-ms= <125>;
     tapping-term-ms = <200>;
-    quick_tap_ms = <200>;
+    quick-tap-ms = <200>;
 };
 
-&lt {  
+&lt {
     flavor = "tap-preferred";
-    require-prior-idle_ms= <125>;
+    require-prior-idle-ms= <125>;
     tapping-term-ms = <200>;
-    quick_tap_ms = <200>;
+    quick-tap-ms = <200>;
 };
 
 #define DVO 1
@@ -104,12 +104,12 @@
         /*1*/
         dvorak {
             bindings = <
-                    &kp F1      &kp F2        &kp F3      &kp F4       &kp F5                                                                                                            &kp F6      &kp F7      &kp F8     &kp F9    &kp F10
-                 &kp EQUAL      &kp N1        &kp N2      &kp N3       &kp N4  &kp N5                                                                                        &kp N6      &kp N7      &kp N8      &kp N9     &kp N0  &kp MINUS
-                   &kp TAB     &kp SQT     &kp COMMA     &kp DOT        &kp P   &kp Y                                                                                         &kp F       &kp G       &kp C       &kp R      &kp P   &kp BSLH
-                   &kp ESC  &mt LGUI A    &mt LALT O &mt LCTRL E &mt LSHIFT U   &kp I                                                                                         &kp D &mt RSHFT H &mt RCTRL T  &mt RALT N &mt RGUI S    &kp FSL
-                 &kp LSHFT    &kp SEMI         &kp Q       &kp J        &kp K   &kp X      &kp LCTRL      &trans       &kp PG_UP     &kp PG_DN &magic KEYB 0        &kp LGUI  &kp B       &kp M       &kp W       &kp V      &kp Z  &kp RSHFT
-                  &mo FNDL     &kp F11       &kp F12    &kp LEFT    &kp RIGHT         &mt LSHFT BSPC &lt SYM DEL &mt LALT 5 HOME  &mt RALT END   &lt SYM RET &mt RSHFT SPACE             &kp UP    &kp DOWN    &kp LBKT   &kp RBKT   &mo FNDL 
+                    &kp F1      &kp F2        &kp F3      &kp F4       &kp F5                                                                                                          &kp F6      &kp F7      &kp F8     &kp F9    &kp F10
+                 &kp EQUAL      &kp N1        &kp N2      &kp N3       &kp N4  &kp N5                                                                                      &kp N6      &kp N7      &kp N8      &kp N9     &kp N0  &kp MINUS
+                   &kp TAB     &kp SQT     &kp COMMA     &kp DOT        &kp P   &kp Y                                                                                       &kp F       &kp G       &kp C       &kp R      &kp P   &kp BSLH
+                   &kp ESC  &mt LGUI A    &mt LALT O &mt LCTRL E &mt LSHIFT U   &kp I                                                                                       &kp D &mt RSHFT H &mt RCTRL T  &mt RALT N &mt RGUI S   &kp FSLH
+                 &kp LSHFT    &kp SEMI         &kp Q       &kp J        &kp K   &kp X      &kp LCTRL      &trans     &kp PG_UP     &kp PG_DN &magic KEYB 0        &kp LGUI  &kp B       &kp M       &kp W       &kp V      &kp Z  &kp RSHFT
+                  &mo FNDL     &kp F11       &kp F12    &kp LEFT    &kp RIGHT         &mt LSHFT BSPC &lt SYM DEL &mt LALT HOME  &mt RALT END   &lt SYM RET &mt RSHFT SPACE             &kp UP    &kp DOWN    &kp LBKT   &kp RBKT   &mo FNDL 
             >;
         };
         /*2*/
@@ -126,12 +126,12 @@
         /*3*/
         fn {
             bindings = <
-                      &none        &none        &none        &none         &none                                                              &none        &none       &none       &none &none
-                      &none        &none        &none        &none         &none  &none                                          &none        &none        &none       &none       &none &none
-                      &none       &kp F1       &kp F2       &kp F3        &kp F4 &kp F5                                         &kp F6       &kp F7       &kp F8      &kp F9     &kp F10 &none
-                      &none  &mt LGUI N1  &mt LALT N2  &mt LCTR N3  &mt LSHFT N4 &kp N5                                         &kp N6 &mt RSHFT N7 &mt RCTRL N8 &mt RALT N9 &mt RGUI N0 &none
-                      &none      &kp F11      &kp F12        &none         &none  &none  &none  &none &none &none &none   &none  &none        &none     &none          &none       &none &none
-                      &none        &none        &none        &none         &none        &LSHFT &LCTRL &LALT &RALT &RCTRL &RSHFT                &none     &none          &none       &none &none
+                      &none        &none        &none        &none         &none                                                                                &none        &none       &none       &none &none
+                      &none        &none        &none        &none         &none  &none                                                            &none        &none        &none       &none       &none &none
+                      &none       &kp F1       &kp F2       &kp F3        &kp F4 &kp F5                                                           &kp F6       &kp F7       &kp F8      &kp F9     &kp F10 &none
+                      &none  &mt LGUI N1  &mt LALT N2 &mt LCTRL N3  &mt LSHFT N4 &kp N5                                                           &kp N6 &mt RSHFT N7 &mt RCTRL N8 &mt RALT N9 &mt RGUI N0 &none
+                      &none      &kp F11      &kp F12        &none         &none  &none     &none     &none    &none    &none     &none     &none  &none        &none     &none          &none       &none &none
+                      &none        &none        &none        &none         &none        &kp LSHFT &kp LCTRL &kp LALT &kp RALT &kp RCTRL &kp RSHFT               &none     &none          &none       &none &none
             >;
         };
         /*4*/
