@@ -100,17 +100,6 @@
     keymap {
         compatible = "zmk,keymap";
         /*0*/
-        qwerty {
-            bindings = <
-                    &kp F1      &kp F2        &kp F3      &kp F4       &kp F5                                                                                                          &kp F6      &kp F7      &kp F8         &kp F9    &kp F10
-                 &kp EQUAL      &kp N1        &kp N2      &kp N3       &kp N4  &kp N5                                                                                      &kp N6      &kp N7      &kp N8      &kp N9         &kp N0  &kp MINUS
-                   &kp TAB       &kp Q         &kp W       &kp E        &kp R   &kp T                                                                                       &kp Y       &kp U       &kp I       &kp O          &kp P   &kp BSLH
-                   &kp ESC  &hr LGUI A    &hr LALT S &hr LCTRL D &hr LSHIFT F   &kp G                                                                                       &kp H &hr RSHFT J &hr RCTRL K  &hr RALT L  &hr RGUI SEMI    &kp SQT
-                 &kp LSHFT       &kp Z         &kp X       &kp C        &kp V   &kp B      &kp LCTRL    &tog COL     &kp PG_UP  &kp    PG_DN &magic KEYB 0        &kp LGUI  &kp N       &kp M   &kp COMMA     &kp DOT       &kp FSLH  &kp RSHFT
-                  &mo FNDL     &kp F11       &kp F12    &kp LEFT    &kp RIGHT         &mt LSHFT BSPC &lt SYM DEL &mt LALT HOME  &mt RALT END   &lt SYM RET &mt RSHFT SPACE             &kp UP    &kp DOWN    &kp LBKT       &kp RBKT   &mo FNDL 
-            >;
-        };
-        /*1*/
         colemak {
             bindings = <
                     &kp F1      &kp F2        &kp F3      &kp F4       &kp F5                                                                                                          &kp F6      &kp F7      &kp F8      &kp F9    &kp F10
@@ -119,6 +108,17 @@
                    &kp ESC  &hr LGUI A    &hr LALT R &hr LCTRL S &hr LSHIFT T   &kp D                                                                                       &kp H &hr RSHFT N &hr RCTRL E  &hr RALT I  &hr RGUI O    &kp SQT
                  &kp LSHFT       &kp Z         &kp X       &kp C        &kp V   &kp B      &kp LCTRL    &tog COL     &kp PG_UP  &kp    PG_DN &magic KEYB 0        &kp LGUI  &kp J       &kp M   &kp COMMA     &kp DOT    &kp FSLH  &kp RSHFT
                   &mo FNDL     &kp F11       &kp F12    &kp LEFT    &kp RIGHT         &mt LSHFT BSPC &lt SYM DEL &mt LALT HOME  &mt RALT END   &lt SYM RET &mt RSHFT SPACE             &kp UP    &kp DOWN    &kp LBKT    &kp RBKT   &mo FNDL 
+            >;
+        };
+        /*1*/
+        qwerty {
+            bindings = <
+                    &kp F1      &kp F2        &kp F3      &kp F4       &kp F5                                                                                                          &kp F6      &kp F7      &kp F8         &kp F9    &kp F10
+                 &kp EQUAL      &kp N1        &kp N2      &kp N3       &kp N4  &kp N5                                                                                      &kp N6      &kp N7      &kp N8      &kp N9         &kp N0  &kp MINUS
+                   &kp TAB       &kp Q         &kp W       &kp E        &kp R   &kp T                                                                                       &kp Y       &kp U       &kp I       &kp O          &kp P   &kp BSLH
+                   &kp ESC  &hr LGUI A    &hr LALT S &hr LCTRL D &hr LSHIFT F   &kp G                                                                                       &kp H &hr RSHFT J &hr RCTRL K  &hr RALT L  &hr RGUI SEMI    &kp SQT
+                 &kp LSHFT       &kp Z         &kp X       &kp C        &kp V   &kp B      &kp LCTRL    &tog COL     &kp PG_UP  &kp    PG_DN &magic KEYB 0        &kp LGUI  &kp N       &kp M   &kp COMMA     &kp DOT       &kp FSLH  &kp RSHFT
+                  &mo FNDL     &kp F11       &kp F12    &kp LEFT    &kp RIGHT         &mt LSHFT BSPC &lt SYM DEL &mt LALT HOME  &mt RALT END   &lt SYM RET &mt RSHFT SPACE             &kp UP    &kp DOWN    &kp LBKT       &kp RBKT   &mo FNDL 
             >;
         };
         /*2*/
